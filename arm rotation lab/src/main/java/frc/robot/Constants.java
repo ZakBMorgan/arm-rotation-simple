@@ -32,5 +32,17 @@ public final class Constants {
     public static final double threatLength = 0.375;
 
     public static final double gearRatio = 1.0 / 1.0;
+
+    public static final double baseExtendPower = 1.0;
+    public static final double extPowerLimit = 0.4;
+  }
+
+  public final class ButtonMap {
+
+    public static final int manualOverride = 1;
+    
+    public static final int topPosition = 3;
+
+    public static final int extLimitReset = 7;
   }
 }
