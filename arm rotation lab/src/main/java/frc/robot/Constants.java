@@ -39,10 +39,14 @@ public final class Constants {
 
   public final class ButtonMap {
 
-    public static final int manualOverride = 1;
-    
-    public static final int topPosition = 3;
-
-    public static final int extLimitReset = 7;
+    public static final int moveArm = 1;
   }
+  
+  public static class PIDConstants {
+    public static final double armPID_P = 0.1;
+    public static final double armPID_I = 0.001;
+    public static final double armPID_D = 0.0;
+
+  }
+  public static int joy1;
 }

@@ -4,9 +4,17 @@
 
 package frc.robot.subsystems;
 
+
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Arm extends SubsystemBase {
+
+  public PIDController PID = new PIDController(
+    Constants.PIDConstants.armPID_P,
+    Constants.PIDConstants.armPID_I,
+    Constants.PIDConstants.armPID_D);
   /** Creates a new Arm. */
   public Arm() {}
 
