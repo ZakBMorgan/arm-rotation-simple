@@ -9,6 +9,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
@@ -25,7 +26,9 @@ public class Arm extends SubsystemBase {
   public static TalonSRX rotateTalon = new TalonSRX(Constants.OperatorConstants.armRotation);
   public static TalonSRX extensionTalon = new TalonSRX(Constants.OperatorConstants.armExtension);
   /** Creates a new Arm. */
-  public Arm() {}
+  public Arm() {
+    rotateTalon.setInverted(false);
+  }
 
   //setRotation, gets sine of angle and multiply by armHoldingVoltage in Constants subsystem
   //divide by 12.0 because 12 volts is the ideal battery size
@@ -68,6 +71,10 @@ public class Arm extends SubsystemBase {
     if (RobotContainer.getJoy1().getPOV() == 0) {
       setExt(0.5);
     }
-
+    else {
+      setExt(0);
+    }
+    SmartDashboard.putBoolean("reverseLimitSwitch", fullyRetracted());
+    SmartDashboard.putBoolean("forwardLimitSwitch", fullyExtended());
   }
 }
