@@ -22,8 +22,8 @@ public final class Constants {
 
     public static final int kDriverControllerPort = 0;
 
-    public static final int armExtension = 10;
-    public static final int armRotation = 11;
+    public static final int armExtension = 11;
+    public static final int armRotation = 10;
 
     //used for driving
     //public static final int leftDriveTalonPort = 2;
