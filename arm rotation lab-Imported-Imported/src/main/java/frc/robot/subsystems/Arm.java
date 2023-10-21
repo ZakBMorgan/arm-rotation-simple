@@ -65,16 +65,16 @@ public class Arm extends SubsystemBase {
     setRot(RobotContainer.getJoy1().getY());
     
     if (RobotContainer.getJoy1().getPOV() == 180) {
-      setExt(-0.5);
+      setExt(-0.7);
     }
-
-    if (RobotContainer.getJoy1().getPOV() == 0) {
-      setExt(0.5);
+    else if(RobotContainer.getJoy1().getPOV() == 0){
+      setExt(0.7);
     }
     else {
       setExt(0);
     }
     SmartDashboard.putBoolean("reverseLimitSwitch", fullyRetracted());
     SmartDashboard.putBoolean("forwardLimitSwitch", fullyExtended());
+    SmartDashboard.putNumber("POV", RobotContainer.getJoy1().getPOV());
   }
 }
